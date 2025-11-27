@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ElasSeguras - Tela Inicial</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: space-between;
+      }
+
+      .panic-button {
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        border-radius: 100px;
+        padding: 40px;
+        font-size: 24px;
+        font-weight: bold;
+        margin: 40px auto 20px auto;
+        width: 80%;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+      }
+
+      .discreet-toggle {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .discreet-toggle button {
+        background-color: #8e44ad;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .bottom-bar {
+        display: flex;
+        justify-content: space-around;
+        background-color: #f2f2f2;
+        padding: 10px 0;
+        border-top: 1px solid #ccc;
+      }
+
+      .bottom-bar button {
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .bottom-bar button:hover {
+        color: #8e44ad;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="panic-button">🛑 BOTÃO DE PÂNICO</button>
+
+    <div class="discreet-toggle">
+      <button>🔒 Ativar/Desativar botão discreto</button>
+    </div>
+
+    <div class="bottom-bar">
+      <button title="Emergência">🛑</button>
+      <button title="Localização">📍</button>
+      <button title="Informações">📚</button>
+      <button title="Configurações">⚙️</button>
+    </div>
+  </body>
+</html>

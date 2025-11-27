@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Cadastro • ElasSeguras</title>
+
+    <!-- Fonte (opcional) - pode remover se quiser -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Metadados úteis -->
+    <meta
+      name="description"
+      content="Tela de cadastro para ElasSeguras — formulário acessível, responsivo e seguro."
+    />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card" aria-labelledby="titulo-cadastro">
+        <div class="card-header">
+          <button
+            class="back-btn"
+            id="voltarBtn"
+            aria-label="Voltar à tela inicial"
+          >
+            <!-- ícone simples -->
+            <span aria-hidden="true">←</span>
+            <span class="back-text">Voltar</span>
+          </button>
+
+          <h1 id="titulo-cadastro" class="title">Criar conta</h1>
+          <p class="subtitle">
+            Segurança, privacidade e acolhimento — para todas.
+          </p>
+        </div>
+
+        <form
+          id="cadastroForm"
+          class="form"
+          novalidate
+          autocomplete="on"
+          aria-describedby="form-desc"
+        >
+          <p id="form-desc" class="sr-only">
+            Preencha os campos abaixo para criar sua conta.
+          </p>
+
+          <div class="field">
+            <label for="nome">Nome completo</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Ex: Maria Silva"
+              autocomplete="name"
+              required
+              minlength="3"
+            />
+            <span class="field-note" aria-hidden="true"
+              >Como deseja ser chamada</span
+            >
+          </div>
+
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="email@exemplo.com"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="grid-two">
+            <div class="field">
+              <label for="telefone">Telefone</label>
+              <input
+                type="tel"
+                id="telefone"
+                name="telefone"
+                placeholder="(11) 91234-5678"
+                inputmode="tel"
+                autocomplete="tel"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="endereco">Endereço (cidade / estado)</label>
+              <input
+                type="text"
+                id="endereco"
+                name="endereco"
+                placeholder="Cidade — UF"
+                autocomplete="street-address"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="senha">Senha</label>
+            <div class="password-wrapper">
+              <input
+                type="password"
+                id="senha"
+                name="senha"
+                placeholder="Mínimo 8 caracteres"
+                autocomplete="new-password"
+                required="Mínimo 8 caracteres"
+                minlength="8"
+              />
+              <button
+                type="button"
+                class="toggle-pass"
+                id="toggleSenha"
+                aria-label="Mostrar senha"
+              >
+                👁️
+              </button>
+            </div>
+
+            <div class="pw-meta">
+              <div id="pw-strength" class="strength" aria-hidden="true">
+                <span class="strength-bar" data-level="0"></span>
+              </div>
+              <small id="pw-hint" class="hint"
+                >Use pelo menos 8 caracteres, misture letras e números.</small
+              >
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="confirmarSenha">Confirmar senha</label>
+            <input
+              type="password"
+              id="confirmarSenha"
+              name="confirmarSenha"
+              placeholder="Repita a senha"
+              autocomplete="new-password"
+              required="Repita a senha"
+            />
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="primary" id="btnCadastrar">
+              Criar conta
+            </button>
+          </div>
+
+          <div class="legal">
+            <input type="checkbox" id="aceito" name="aceito" required />
+            <label for="aceito" class="small">
+              Li e aceito os 
+              <a href="Termos_de_Uso.html" target="_blank" tabindex="0">Termos de Uso</a> e a 
+              <a href="politica_de_privacidade.html" target="_blank" tabindex="0">Política de Privacidade</a>.
+            </label>
+          </div>
+
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- toast / mensagem (aria-live) -->
+    <div
+      id="toast"
+      class="toast"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+      hidden
+    >
+      <div class="toast-inner">
+        <strong id="toast-title">Sucesso</strong>
+        <p id="toast-msg">Cadastro realizado com sucesso!</p>
+        <button class="toast-close" aria-label="Fechar mensagem">✕</button>
+      </div>
+    </div>
+
+    <script src="js/cadastro.js" defer></script>
+  </body>
+</html>
